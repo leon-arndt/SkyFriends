@@ -316,6 +316,8 @@ GameObject:
   - component: {fileID: 5262445998654892464}
   - component: {fileID: 1905223761}
   - component: {fileID: 3616933714460147868}
+  - component: {fileID: 2767148379161659914}
+  - component: {fileID: 275799565419165900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -447,6 +449,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
+--- !u!114 &2767148379161659914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596657086814929142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c15d5e85a54230addcb05abbc9af26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statSystem: {fileID: 11400000, guid: 2bd42e8b1d6196849a5b2ab64e87def3, type: 2}
+  faction: {fileID: 275799565419165900}
+--- !u!114 &275799565419165900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596657086814929142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6679cc0dd4342f692811d4af40efd99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &5004880276617819677
 GameObject:
   m_ObjectHideFlags: 3

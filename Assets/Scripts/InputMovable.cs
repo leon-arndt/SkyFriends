@@ -2,11 +2,8 @@
 
 public class InputMovable : MonoBehaviour
 {
-    [SerializeField]
-    private ScriptableVector3 value;
-    
-    [SerializeField]
-    private CharacterController characterController;
+    [SerializeField] private ScriptableVector3 value;
+    [SerializeField] private CharacterController characterController;
     
     private Vector3 _playerVelocity;
     private bool _groundedPlayer;
