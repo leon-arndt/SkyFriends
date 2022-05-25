@@ -39,10 +39,10 @@ public class SkillSystem : ScriptableObject
         return _current ?? new Dictionary<SkillType, SkillData>();
     }
 
-    public void Gain(SkillType type, int amount)
+    public void Gain(SkillType type, uint amount)
     {
         var current = Get(type);
-        var newSkillData = new SkillData{level = current.level + amount};
+        var newSkillData = new SkillData{level = current.level + (int) amount};
         Set(type, newSkillData);
     }
 }

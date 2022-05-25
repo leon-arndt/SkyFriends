@@ -17,6 +17,8 @@ public class StatSystem : ScriptableObject
     public void Reset()
     {
         _current = new Dictionary<StatType, StatData>();
+        _current[StatType.Health] = new StatData{amount = 100};
+        _current[StatType.MaxHealth] = new StatData{amount = 100};
     }
 
     public void Set(StatType type, StatData amount)

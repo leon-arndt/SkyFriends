@@ -21,7 +21,10 @@ namespace UserInterface
         
         private void DisplayCurrentSkills()
         {
-            health.text = statSystem.Get(StatType.Health).amount.ToString();
+            var currentHealth = statSystem.Get(StatType.Health).amount;
+            var maxHealth = statSystem.Get(StatType.MaxHealth).amount;
+            health.text = $"{currentHealth}/{maxHealth}";
+            
         }
     }
 }

@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statSystem: {fileID: 11400000, guid: 2bd42e8b1d6196849a5b2ab64e87def3, type: 2}
+  skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
   faction: {fileID: 275799565419165900}
 --- !u!114 &275799565419165900
 MonoBehaviour:
