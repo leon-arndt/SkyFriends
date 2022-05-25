@@ -1,20 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class Attacker : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] Faction faction;
-    [SerializeField] private ScriptableVector3 targetPosition;
+    [SerializeField] private Faction faction;
+    [SerializeField] private Damageable damageable;
     [SerializeField] private uint attackPower = 1;
     
     private void Update()
     {
-        agent.destination = targetPosition.value;
-        
-        if (Vector3.Distance(targetPosition.value, transform.position) < 2)
+        if (damageable == null)
         {
-            FindObjectOfType<Damageable>().Damage(faction, attackPower);
+            damageable = FindObjectsOfType<Damageable>()
+                .FirstOrDefault(x => x.Faction != faction);
+        }
+
+        if (damageable == null) return;
+        
+        agent.destination = damageable.transform.position;
+        var attackDistance = 2f;
+        if (Vector3.Distance(damageable.transform.position, transform.position) < attackDistance)
+        {
+            damageable.Damage(faction, attackPower);
         }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2350313788893901526}
   - component: {fileID: 8856747091567479393}
   - component: {fileID: 8099478233849947333}
+  - component: {fileID: -6478435221455559920}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -136,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2350313788893901526}
   faction: {fileID: 8099478233849947333}
-  targetPosition: {fileID: 11400000, guid: 9e2d0933b6345b048881615175287141, type: 2}
+  damageable: {fileID: 0}
   attackPower: 1
 --- !u!114 &8099478233849947333
 MonoBehaviour:
@@ -151,6 +152,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 2
+--- !u!114 &-6478435221455559920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555234802472079649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c15d5e85a54230addcb05abbc9af26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statSystem: {fileID: 0}
+  skillSystem: {fileID: 0}
+  faction: {fileID: 8099478233849947333}
 --- !u!1001 &1728425348964210474
 PrefabInstance:
   m_ObjectHideFlags: 0
