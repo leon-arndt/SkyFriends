@@ -11,8 +11,12 @@ public class InputMovable : MonoBehaviour
 
     private void Update()
     {
-        var moveSpeed = 0.1f;
-        value.value += moveSpeed * new Vector3(Input.GetAxis("Horizontal"), 0,  Input.GetAxis("Vertical"));
+        const float moveSpeed = 0.1f;
+        var mainCamera = Camera.main.transform;
+        var moveDir = Input.GetAxis("Horizontal") * mainCamera.transform.right +
+                      Input.GetAxis("Vertical") * mainCamera.forward;
+        moveDir.y = 0;
+        value.value += moveSpeed * moveDir;
         transform.position = value.value;
     }
 }
