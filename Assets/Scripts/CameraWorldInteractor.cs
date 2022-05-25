@@ -2,6 +2,8 @@
 
 public class CameraWorldInteractor : MonoBehaviour
 {
+    [SerializeField] private SkillSystem skillSystem;
+    
     private Camera _camera;
 
     private void Start()
@@ -16,9 +18,9 @@ public class CameraWorldInteractor : MonoBehaviour
             if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, Mathf.Infinity))
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                    
-                var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                cube.transform.position = hit.point;
+
+                skillSystem.Gain(SkillType.Destruction, 1);
+                Destroy(hit.transform.gameObject);
             }
         }
         else
@@ -27,8 +29,11 @@ public class CameraWorldInteractor : MonoBehaviour
             if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, Mathf.Infinity))
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                    
-                Destroy(hit.transform.gameObject);
+                
+                var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                cube.transform.position = hit.point.Round();
+                
+                skillSystem.Gain(SkillType.Construction, 1);
             }
         }
     }

@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1a8fa18c624c0096aa59b53682ac59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
 --- !u!1 &5004880276617819677
 GameObject:
   m_ObjectHideFlags: 3
@@ -599,7 +600,7 @@ MonoBehaviour:
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -933,7 +934,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7598922664340030043}
-  m_LocalRotation: {x: -0.23408228, y: 0.000000016728329, z: 0.000000004027708, w: 0.97221684}
+  m_LocalRotation: {x: -0.23408228, y: -0.000000016728338, z: -0.00000000402771, w: 0.97221684}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
   m_Children:
@@ -1007,8 +1008,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8062874962484152145}
-  m_LocalRotation: {x: -0.2566679, y: -0.000000008315286, z: -0.0000000022082438,
-    w: 0.9664997}
+  m_LocalRotation: {x: -0.2566679, y: 0.00000000831498, z: 0.0000000022081628, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
   m_Children:
