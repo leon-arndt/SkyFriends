@@ -4,5 +4,6 @@
     Construction,
     Destruction,
     Attack,
-    Defense
+    Defense,
+    Math
 }
