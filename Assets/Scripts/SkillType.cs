@@ -3,7 +3,9 @@
     Taming,
     Construction,
     Destruction,
-    Attack,
+    Magic,
+    Ranged,
     Defense,
-    Math
+    Patience,
+    Math,
 }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UniRx;
+using UnityEngine;
 
 public class CameraWorldInteractor : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class CameraWorldInteractor : MonoBehaviour
     private void Start()
     {
         _camera = Camera.main;
+
+        Observable.Interval(TimeSpan.FromSeconds(10f))
+            .TakeUntilDestroy(this)
+            .Subscribe(_ => skillSystem.Gain(SkillType.Patience, 5));
     }
 
     private void Update()
