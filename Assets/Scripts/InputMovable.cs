@@ -2,7 +2,17 @@
 
 public class InputMovable : MonoBehaviour
 {
-    public ScriptableVector3 value;
+    [SerializeField]
+    private ScriptableVector3 value;
+    
+    [SerializeField]
+    private CharacterController characterController;
+    
+    private Vector3 _playerVelocity;
+    private bool _groundedPlayer;
+    private const float PlayerSpeed = 8.0f;
+    private const float JumpHeight = 2.0f;
+    private const float GravityValue = -16f;
 
     private void Start()
     {
@@ -11,12 +21,31 @@ public class InputMovable : MonoBehaviour
 
     private void Update()
     {
-        const float moveSpeed = 0.1f;
         var mainCamera = Camera.main.transform;
         var moveDir = Input.GetAxis("Horizontal") * mainCamera.transform.right +
                       Input.GetAxis("Vertical") * mainCamera.forward;
         moveDir.y = 0;
-        value.value += moveSpeed * moveDir;
-        transform.position = value.value;
+        
+        _groundedPlayer = characterController.isGrounded;
+        if (_groundedPlayer && _playerVelocity.y < 0)
+        {
+            _playerVelocity.y = 0f;
+        }
+        
+        characterController.Move(moveDir * (Time.deltaTime * PlayerSpeed));
+
+        if (moveDir != Vector3.zero)
+        {
+            gameObject.transform.forward = moveDir;
+        }
+
+        if (Input.GetButtonDown("Jump") && _groundedPlayer)
+        {
+            _playerVelocity.y += Mathf.Sqrt(JumpHeight * -3.0f * GravityValue);
+        }
+
+        _playerVelocity.y += GravityValue * Time.deltaTime;
+        characterController.Move(_playerVelocity * Time.deltaTime);
+        value.value = transform.position;
     }
-}
+}   
