@@ -10,6 +10,7 @@ public class Follower : MonoBehaviour
 
     private void Update()
     {
+        agent.stoppingDistance = 3f;
         agent.destination = target.value;
     }
 }
