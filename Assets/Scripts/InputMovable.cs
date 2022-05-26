@@ -7,20 +7,21 @@ public class InputMovable : MonoBehaviour
     
     private Vector3 _playerVelocity;
     private bool _groundedPlayer;
+    private Camera _camera;
     private const float PlayerSpeed = 8.0f;
     private const float JumpHeight = 2.0f;
     private const float GravityValue = -16f;
 
     private void Start()
     {
+        _camera = Camera.main;
         value.value = transform.position;
     }
 
     private void Update()
     {
-        var mainCamera = Camera.main.transform;
-        var moveDir = Input.GetAxis("Horizontal") * mainCamera.transform.right +
-                      Input.GetAxis("Vertical") * mainCamera.forward;
+        var moveDir = Input.GetAxis("Horizontal") * _camera.transform.right +
+                      Input.GetAxis("Vertical") * _camera.transform.forward;
         moveDir.y = 0;
         
         _groundedPlayer = characterController.isGrounded;
