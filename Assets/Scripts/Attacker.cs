@@ -14,7 +14,7 @@ public class Attacker : MonoBehaviour
         if (damageable == null)
         {
             damageable = FindObjectsOfType<Damageable>()
-                .FirstOrDefault(x => x.Faction != faction);
+                .FirstOrDefault(x => x.Faction.value != faction.value);
         }
 
         if (damageable == null) return;
@@ -24,6 +24,6 @@ public class Attacker : MonoBehaviour
         if (Vector3.Distance(damageable.transform.position, transform.position) < attackDistance)
         {
             damageable.Damage(faction, attackPower);
-        }
+        }   
     }
 }

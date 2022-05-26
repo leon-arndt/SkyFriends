@@ -21,7 +21,7 @@ namespace UserInterface
 
         private void UpdateView()
         {
-            tacticName.text = tacticSystem.value.ToString();
+            tacticName.text = ((Tactic) tacticSystem.value).ToString();
         }
     }
 }

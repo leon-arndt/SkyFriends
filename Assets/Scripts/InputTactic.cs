@@ -9,7 +9,7 @@ public class InputTactic : MonoBehaviour
 
     private void Start()
     {
-        tactic.value = default;
+        tactic.value = (int)Tactic.Follow;
     }
 
     private void Update()
