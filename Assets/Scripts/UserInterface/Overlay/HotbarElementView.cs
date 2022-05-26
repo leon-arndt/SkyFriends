@@ -6,9 +6,12 @@ namespace UserInterface.Overlay
     public class HotbarElementView : MonoBehaviour
     {
         [SerializeField] private Image icon;
-        public void Display(IHotbarItemType itemType)
+        [SerializeField] private GameObject activeIndicator;
+        
+        public void Display(IHotbarItemType itemType, bool isActive)
         {
             icon.sprite = itemType.GetIcon();
+            activeIndicator.SetActive(isActive);
         }
     }
 }

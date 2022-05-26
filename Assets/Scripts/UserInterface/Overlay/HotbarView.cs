@@ -26,10 +26,13 @@ namespace UserInterface.Overlay
                 Destroy(child.gameObject);
             }
 
-            foreach (var hotbarItemType in hotbarSystem.GetAll())
+            var all = hotbarSystem.GetAll();
+            for (var index = 0; index < all.Count; index++)
             {
+                var hotbarItemType = all[index];
                 var hotbarElementView = Instantiate(hotbarElementViewPrefab, holder);
-                hotbarElementView.Display(hotbarItemType);
+                var isActive = index == (int)hotbarSystem.GetActive();
+                hotbarElementView.Display(hotbarItemType, isActive);
             }
         }
     }

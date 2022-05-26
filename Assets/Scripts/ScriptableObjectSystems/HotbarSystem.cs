@@ -26,6 +26,11 @@ public class HotbarSystem : ScriptableObject
         MessageBroker.Default.Publish(new HotbarChanged());
     }
 
+    public uint GetActive()
+    {
+        return _activeElementIndex;
+    }
+    
     public void UseActive()
     {
         if (_activeElementIndex < _currentItems.Count)

@@ -16,4 +16,4 @@ MonoBehaviour:
   attackPower: 10
   skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
   faction: {fileID: 11400000, guid: 405bd56154abd84439c78c2793086251, type: 2}
-  sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
