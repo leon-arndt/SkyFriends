@@ -410,8 +410,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004880276617819677}
-  m_LocalRotation: {x: -0.21146804, y: 0.0000000084086285, z: 0.0000000018192999,
-    w: 0.9773849}
+  m_LocalRotation: {x: -0.206213, y: 0.000000018823853, z: 0.000000003966986, w: 0.97850716}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
   m_Children:
@@ -447,7 +446,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 50
+    FieldOfView: 55
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -518,7 +517,7 @@ MonoBehaviour:
   m_Follow: {fileID: 4596657086814929146}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 50
+    FieldOfView: 55
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -536,7 +535,7 @@ MonoBehaviour:
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0
-    m_DecelTime: 0.1
+    m_DecelTime: 0
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
@@ -560,7 +559,7 @@ MonoBehaviour:
     m_SpeedMode: 0
     m_MaxSpeed: 600
     m_AccelTime: 0
-    m_DecelTime: 0.1
+    m_DecelTime: 0
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
     m_InvertInput: 0
@@ -587,10 +586,10 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 8
-    m_Radius: 0
+    m_Radius: 0.1
   - m_Height: 5
     m_Radius: 7
-  - m_Height: 5
+  - m_Height: 2
     m_Radius: 7
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -873,7 +872,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7598922664340030043}
-  m_LocalRotation: {x: -0.23408228, y: -0.000000016728338, z: -0.00000000402771, w: 0.97221684}
+  m_LocalRotation: {x: -0.23145024, y: -0.000000008369586, z: -0.0000000019912108,
+    w: 0.97284675}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
   m_Children:
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 50
+    FieldOfView: 55
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 50
+    FieldOfView: 55
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
