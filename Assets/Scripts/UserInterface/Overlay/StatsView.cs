@@ -12,14 +12,14 @@ namespace UserInterface
         
         private void Start()
         {
-            DisplayCurrentSkills();
+            DisplayCurrentStats();
             MessageBroker.Default
                 .Receive<StatChanged>()
                 .TakeUntilDestroy(this)
-                .Subscribe(_ => DisplayCurrentSkills());
+                .Subscribe(_ => DisplayCurrentStats());
         }
         
-        private void DisplayCurrentSkills()
+        private void DisplayCurrentStats()
         {
             var currentHealth = statSystem.Get(StatType.Health).amount;
             var maxHealth = statSystem.Get(StatType.MaxHealth).amount;
