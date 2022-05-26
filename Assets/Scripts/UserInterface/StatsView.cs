@@ -8,7 +8,7 @@ namespace UserInterface
     public class StatsView : MonoBehaviour
     {
         [SerializeField] private StatSystem statSystem;
-        [SerializeField] private TextMeshProUGUI health, energy;
+        [SerializeField] private TextMeshSlider health, energy;
         
         private void Start()
         {
@@ -23,8 +23,7 @@ namespace UserInterface
         {
             var currentHealth = statSystem.Get(StatType.Health).amount;
             var maxHealth = statSystem.Get(StatType.MaxHealth).amount;
-            health.text = $"{currentHealth}/{maxHealth}";
-            
+            health.Set((float)currentHealth / maxHealth, $"{currentHealth}/{maxHealth}");
         }
     }
 }
