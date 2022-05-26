@@ -24,6 +24,8 @@ public class StatSystem : ScriptableObject
         _current = new Dictionary<StatType, StatData>();
         _current[StatType.Health] = new StatData{amount = 100};
         _current[StatType.MaxHealth] = new StatData{amount = 100};
+        _current[StatType.UltimateCharge] = new StatData{amount = 0};
+        _current[StatType.MaxUltimateCharge] = new StatData{amount = 100};
     }
 
     public void Set(StatType type, StatData amount)

@@ -2,4 +2,6 @@
 {
     Health,
     MaxHealth,
+    UltimateCharge,
+    MaxUltimateCharge,
 }
