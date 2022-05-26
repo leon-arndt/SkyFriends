@@ -14,6 +14,11 @@ public class StatSystem : ScriptableObject
         Reset();
     }
 
+    private StatSystem()
+    {
+        Reset();
+    }
+
     public void Reset()
     {
         _current = new Dictionary<StatType, StatData>();

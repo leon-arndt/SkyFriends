@@ -1,19 +1,28 @@
-﻿using ScriptableObjectSystems;
+﻿using System;
+using ScriptableObjectSystems;
 using UnityEngine;
 
 namespace WorldEntity
 {
     public class Pickup : MonoBehaviour, IInteractible
     {
-        [SerializeField] private BuildItemType itemType;
+        [SerializeField] private ScriptableObject itemType;
         
         public void Interact(Transform caller)
         {
-            if (caller.GetComponent<IHotbarSystem>() != null)
+            switch (itemType)
             {
-                caller.GetComponent<IHotbarSystem>().HotbarSystem.Add(itemType);
-                Destroy(this.gameObject);
+                case IHotbarItemType hotbarItemType:
+                    if (caller.GetComponent<IHotbarSystem>() != null)
+                    {
+                        caller.GetComponent<IHotbarSystem>().HotbarSystem.Add(hotbarItemType);
+                        Destroy(gameObject);
+                    }
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
+
         }
     }
 }

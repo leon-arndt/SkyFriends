@@ -28,5 +28,10 @@ public class Damageable : MonoBehaviour
         
         statSystem.Subtract(StatType.Health, amount);
         skillSystem.Gain(SkillType.Construction, amount);
+        
+        if (statSystem.Get(StatType.Health).amount <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

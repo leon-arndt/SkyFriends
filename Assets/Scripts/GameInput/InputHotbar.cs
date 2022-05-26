@@ -18,6 +18,14 @@ namespace GameInput
             {
                 hotbarSystem.SetActive(0);
             }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                hotbarSystem.SetActive(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                hotbarSystem.SetActive(2);
+            }
         
             if (Input.GetMouseButtonDown(0))
             {

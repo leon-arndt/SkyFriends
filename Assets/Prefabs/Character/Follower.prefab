@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5488975568697630390}
   - component: {fileID: 2350313788893901526}
   - component: {fileID: 4647232219497941556}
-  - component: {fileID: 5089587004166453969}
   - component: {fileID: 4407931707087072165}
   m_Layer: 0
   m_Name: Follower
@@ -152,22 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2350313788893901526}
-  faction: {fileID: 5089587004166453969}
-  targetPosition: {fileID: 0}
+  faction: {fileID: 11400000, guid: 405bd56154abd84439c78c2793086251, type: 2}
+  damageable: {fileID: 0}
   attackPower: 1
---- !u!114 &5089587004166453969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2555234802472079649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6679cc0dd4342f692811d4af40efd99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 1
+  aggroRange: 10
 --- !u!114 &4407931707087072165
 MonoBehaviour:
   m_ObjectHideFlags: 0

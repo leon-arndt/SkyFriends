@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Faction : MonoBehaviour
+[CreateAssetMenu(menuName = "Faction")]
+public class Faction : ScriptableObject
 {
     public FactionType value;
 }
