@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraWorldInteractor : MonoBehaviour
 {
+    [SerializeField] private uint maxInteractDistance = 20;
     [SerializeField] private SkillSystem skillSystem;
     
     private Camera _camera;
@@ -21,7 +22,7 @@ public class CameraWorldInteractor : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, Mathf.Infinity))
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, maxInteractDistance))
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
@@ -32,7 +33,7 @@ public class CameraWorldInteractor : MonoBehaviour
         else
         if (Input.GetMouseButtonDown(1))
         {
-            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, Mathf.Infinity))
+            if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, maxInteractDistance))
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 

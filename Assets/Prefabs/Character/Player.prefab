@@ -319,6 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1a8fa18c624c0096aa59b53682ac59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxInteractDistance: 20
   skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
 --- !u!114 &2767148379161659914
 MonoBehaviour:
@@ -410,7 +411,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004880276617819677}
-  m_LocalRotation: {x: -0.206213, y: 0.000000018823853, z: 0.000000003966986, w: 0.97850716}
+  m_LocalRotation: {x: -0.206213, y: -0.00000001882385, z: -0.000000003966985, w: 0.97850716}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
   m_Children:
@@ -872,7 +873,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7598922664340030043}
-  m_LocalRotation: {x: -0.23145024, y: -0.000000008369586, z: -0.0000000019912108,
+  m_LocalRotation: {x: -0.23145024, y: -0.000000008369585, z: -0.0000000019912103,
     w: 0.97284675}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
