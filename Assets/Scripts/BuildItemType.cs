@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WorldEntity;
 
 [CreateAssetMenu(menuName = "BuildItemType")]
 public class BuildItemType : ScriptableObject, IHotbarItemType
@@ -6,7 +7,7 @@ public class BuildItemType : ScriptableObject, IHotbarItemType
     [SerializeField] private uint maxInteractDistance = 20;
     [SerializeField] private SkillSystem skillSystem;
     [SerializeField] private Sprite sprite;
-    
+
     private Camera _camera;
 
     private void OnEnable()
@@ -18,6 +19,7 @@ public class BuildItemType : ScriptableObject, IHotbarItemType
     {
         if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out var hit, maxInteractDistance))
         {
+            if (!hit.transform.TryGetComponent(out Destructible _)) return;
             skillSystem.Gain(SkillType.Destruction, 1);
             Destroy(hit.transform.gameObject);
         }
@@ -29,7 +31,7 @@ public class BuildItemType : ScriptableObject, IHotbarItemType
         {
             var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.position = hit.point.Round();
-                
+
             skillSystem.Gain(SkillType.Construction, 1);
         }
     }
