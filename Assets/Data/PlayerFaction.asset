@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PlayerFaction
   m_EditorClassIdentifier: 
   value: 1
+  isBefriendable: 0
+  leaderPosition: {fileID: 11400000, guid: 9e2d0933b6345b048881615175287141, type: 2}

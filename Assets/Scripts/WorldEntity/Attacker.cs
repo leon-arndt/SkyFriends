@@ -3,43 +3,56 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Attacker : MonoBehaviour
+namespace WorldEntity
 {
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Faction faction;
-    [SerializeField] private Damageable damageable;
-    [SerializeField] private uint attackPower = 1;
-    [SerializeField] private uint aggroRange = 10;
-
-    private void Update()
+    public class Attacker : MonoBehaviour
     {
-        if (damageable == null)
+        [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private Faction faction;
+        [SerializeField] private Damageable damageable;
+        [SerializeField] private uint attackPower = 1;
+        [SerializeField] private uint aggroRange = 10;
+
+        private void Start()
         {
-            damageable = FindObjectsOfType<Damageable>()
-                .FirstOrDefault(CanAggro());
+            faction = Instantiate(faction);
         }
 
-        if (damageable == null) return;
-
-        var targetPosition = damageable.transform.position;
-        agent.destination = targetPosition;
-        var attackDistance = 2f;
-
-        switch (Vector3.Distance(targetPosition, transform.position))
+        private void Update()
         {
-            case var distance when distance < attackDistance:
-                damageable.Damage(faction, attackPower);
-                break;
-            case var distance when distance > aggroRange * 1.2f:
-                damageable = null;
-                break;
-        }
-    }
+            if (damageable == null)
+            {
+                damageable = FindObjectsOfType<Damageable>()
+                    .FirstOrDefault(CanAggro());
+            }
 
-    private Func<Damageable, bool> CanAggro()
-    {
-        return x =>
-            x.Faction.value != faction.value &&
-            Vector3.Distance(transform.position, x.transform.position) <= aggroRange;
+            if (damageable == null) return;
+
+            var targetPosition = damageable.transform.position;
+            agent.destination = targetPosition;
+            var attackDistance = 2f;
+
+            switch (Vector3.Distance(targetPosition, transform.position))
+            {
+                case var distance when distance < attackDistance:
+                    damageable.Damage(faction, attackPower);
+                    break;
+                case var distance when distance > aggroRange * 1.2f:
+                    damageable = null;
+                    break;
+            }
+        }
+
+        private Func<Damageable, bool> CanAggro()
+        {
+            return x =>
+                x.Faction.value != faction.value &&
+                Vector3.Distance(transform.position, x.transform.position) <= aggroRange;
+        }
+
+        public void Set(Faction newFaction)
+        {
+            faction = newFaction;
+        }
     }
 }

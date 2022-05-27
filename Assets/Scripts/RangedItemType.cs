@@ -1,5 +1,6 @@
 ﻿using DefaultNamespace;
 using UnityEngine;
+using WorldEntity;
 
 [CreateAssetMenu(menuName = "RangedItemType")]
 public class RangedItemType : ScriptableObject, IHotbarItemType
@@ -30,7 +31,8 @@ public class RangedItemType : ScriptableObject, IHotbarItemType
             if (!damageable) continue;
             skillSystem.Gain(SkillType.Ranged, 2);
             statSystem.Gain(StatType.UltimateCharge, 12);
-            damageable.Damage(faction, attackPower);
+            var damage = attackPower + (uint)skillSystem.Get(SkillType.Ranged).level;
+            damageable.Damage(faction, damage);;
         }
     }
 

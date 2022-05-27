@@ -1,6 +1,7 @@
 ﻿using Events;
 using UniRx;
 using UnityEngine;
+using WorldEntity;
 
 public class Friend : MonoBehaviour
 {

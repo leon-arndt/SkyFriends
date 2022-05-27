@@ -3,30 +3,47 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Follower : MonoBehaviour
+namespace WorldEntity
 {
-    [SerializeField] private SkillSystem skillSystem;
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private ScriptableVector3 target;
-
-    private bool _isTame;
-    
-    private void Update()
+    public class Follower : MonoBehaviour
     {
-        if (_isTame)
+        [SerializeField] private SkillSystem skillSystem;
+        [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private ScriptableVector3 target;
+
+        private bool _isTame;
+    
+        private void Update()
         {
-            agent.stoppingDistance = 3f;
-            agent.destination = target.value;
-        }
-        else
-        {
-            if (Vector3.Distance(transform.position, target.value) < 3f)
+            if (_isTame)
             {
-                _isTame = true;
-                skillSystem.Gain(SkillType.Taming, 1);
-                MessageBroker.Default.Publish(new SkillChanged());
+                agent.stoppingDistance = 3f;
+                agent.destination = target.value;
+            }
+            else
+            {
+                if (Vector3.Distance(transform.position, target.value) < 3f)
+                {
+                    _isTame = true;
+                    skillSystem.Gain(SkillType.Taming, 1);
+                    MessageBroker.Default.Publish(new SkillChanged());
+                }
             }
         }
+    
+    
+        public void Init(FollowerSettings settings)
+        {
+            skillSystem = settings.SkillSystem;
+            agent = settings.Agent;
+            target = settings.Target;
+        }
 
+        public struct FollowerSettings
+        {
+            public SkillSystem SkillSystem;
+            public NavMeshAgent Agent;
+            public ScriptableVector3 Target;
+        }
     }
 }
