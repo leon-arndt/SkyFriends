@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 2
   isBefriendable: 1
+  befriendChance: 0.2
   leaderPosition: {fileID: 0}

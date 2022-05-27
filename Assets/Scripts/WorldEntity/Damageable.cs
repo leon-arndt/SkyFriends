@@ -34,7 +34,7 @@ namespace WorldEntity
 
             if (statSystem.Get(StatType.Health).amount <= 0)
             {
-                if (faction.isBefriendable && Random.value < 0.1f)
+                if (faction.isBefriendable && Random.value < faction.befriendChance)
                 {
                     Befriend(source);
                 }
