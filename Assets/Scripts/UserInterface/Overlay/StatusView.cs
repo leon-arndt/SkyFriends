@@ -13,7 +13,7 @@ namespace UserInterface.Overlay
         private void Start()
         {
             Refresh();
-            Observable.Interval(TimeSpan.FromSeconds(1f))
+            Observable.Interval(TimeSpan.FromSeconds(0.1f))
                 .TakeUntilDestroy(this)
                 .Subscribe(_ =>Refresh());
         }
