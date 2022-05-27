@@ -20,8 +20,9 @@ public class InputMovable : MonoBehaviour
 
     private void Update()
     {
+        var forwardCamOnPlane = new Vector3(_camera.transform.forward.x, 0, _camera.transform.forward.z).normalized;
         var moveDir = Input.GetAxis("Horizontal") * _camera.transform.right +
-                      Input.GetAxis("Vertical") * _camera.transform.forward;
+                      Input.GetAxis("Vertical") * forwardCamOnPlane;
         moveDir.y = 0;
         
         _groundedPlayer = characterController.isGrounded;

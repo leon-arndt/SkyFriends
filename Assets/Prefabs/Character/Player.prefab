@@ -599,10 +599,10 @@ MonoBehaviour:
   m_SplineCurvature: 1
   m_Orbits:
   - m_Height: 8
-    m_Radius: 0.1
+    m_Radius: 1
   - m_Height: 5
     m_Radius: 7
-  - m_Height: 2
+  - m_Height: 0
     m_Radius: 7
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -885,7 +885,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7598922664340030043}
-  m_LocalRotation: {x: -0.23145024, y: 0.000000008369586, z: 0.0000000019912108, w: 0.97284675}
+  m_LocalRotation: {x: -0.23145024, y: 0.000000008369585, z: 0.0000000019912103, w: 0.97284675}
   m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: -0.37453184}
   m_Children:
