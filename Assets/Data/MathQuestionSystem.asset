@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eef45303d674dde804c10a50e5bdeae, type: 3}
+  m_Name: MathQuestionSystem
+  m_EditorClassIdentifier: 
+  skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
+  currentQuestion: {fileID: 0}
+  possibleQuestions:
+  - {fileID: 11400000, guid: 259ef7fbfc7d5464ca6c2337d9322420, type: 2}
+  - {fileID: 11400000, guid: f6067360e9bdfda47ac0ea88bdebc810, type: 2}
+  - {fileID: 11400000, guid: 528622802e301fd43801631a1671c024, type: 2}
+  - {fileID: 11400000, guid: 7cf081751cd713a4692fe2864c2eaa86, type: 2}

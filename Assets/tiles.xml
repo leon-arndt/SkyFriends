@@ -1,0 +1,8 @@
+<set>
+  <tiles>
+<tile name="Assets/Prefabs/World/Cube" symmetry="X" weight="1.0"/>
+	</tiles>
+<neighbors>  <neighbor left="Assets/Prefabs/World/Cube 0" right="Assets/Prefabs/World/Cube 0"/>
+  <neighbor left="Assets/Prefabs/World/Cube 1" right="Assets/Prefabs/World/Cube 1"/>
+	</neighbors>
+</set>
