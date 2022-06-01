@@ -24,7 +24,7 @@ namespace GameInput
                 hotbarSystem.UseActiveAlternative();
             }
             
-            // TODO: consider reducing code duplication of hotbar slots
+            // TODO: consider reducing code duplication of hotFbar slots
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 hotbarSystem.SetActive(0);

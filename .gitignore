@@ -37,3 +37,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+CodeCoverage/Report
+CodeCoverage/Report-history
+CodeCoverage/SkyFriends-opencov/PlayMode
