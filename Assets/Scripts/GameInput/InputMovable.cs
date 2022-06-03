@@ -12,7 +12,7 @@ namespace GameInput
         private Camera _camera;
         private const float PlayerSpeed = 8.0f;
         private const float JumpHeight = 2.0f;
-        private const float GravityValue = -16f;
+        private const float GravityValue = -28f;
 
         private void Start()
         {
