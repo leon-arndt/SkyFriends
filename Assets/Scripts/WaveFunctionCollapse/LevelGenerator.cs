@@ -1,8 +1,9 @@
+using ScriptableObjectSystems;
 using UnityEngine;
 
 namespace WaveFunctionCollapse
 {
-    public class LevelGenerator : MonoBehaviour
+    public class LevelGenerator : MonoBehaviour, IResettable
     {
         [SerializeField] private OverlapWFC levelLayer;
         [SerializeField] private ushort layerCount;
@@ -11,7 +12,21 @@ namespace WaveFunctionCollapse
 
         private void Start()
         {
+            Reset();
+        }
+        
+        public void Reset()
+        {
+            DeleteGenerated();
             Generate();
+        }
+
+        private void DeleteGenerated()
+        {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
         }
 
         private void Generate()

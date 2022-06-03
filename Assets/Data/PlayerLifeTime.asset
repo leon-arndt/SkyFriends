@@ -15,3 +15,4 @@ MonoBehaviour:
   systemsToReset:
   - {fileID: 11400000, guid: fea76aa3c86e75e4ead2dfbf1a0e2190, type: 2}
   - {fileID: 11400000, guid: 2bd42e8b1d6196849a5b2ab64e87def3, type: 2}
+  - {fileID: 11400000, guid: b7e7a7bac5eef2d4a9b3816131235a46, type: 2}
