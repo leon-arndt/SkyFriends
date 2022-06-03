@@ -6,8 +6,14 @@ using UnityEngine;
 
 namespace WaveFunctionCollapse
 {
+    public interface IOverlapWfcInfo
+    {
+        public Transform Transform { get; }
+        public Vector2Int Size { get; }
+    }
+    
     [ExecuteInEditMode]
-    internal class OverlapWFC : MonoBehaviour
+    internal class OverlapWFC : MonoBehaviour, IOverlapWfcInfo
     {
         public Training training;
         public int gridsize = 1;
@@ -27,6 +33,9 @@ namespace WaveFunctionCollapse
         private Transform group;
         private GameObject[,] rendering;
         private bool undrawn = true;
+
+        public Transform Transform => transform;
+        public Vector2Int Size => new Vector2Int(width, depth);
 
         private static bool IsPrefabRef(UnityEngine.Object o)
         {
