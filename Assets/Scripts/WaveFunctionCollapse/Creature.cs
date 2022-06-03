@@ -14,9 +14,9 @@ namespace WaveFunctionCollapse
             {
                 var uniquePrefab = Instantiate(prefab, levelLayer.Transform);
                 uniquePrefab.transform.localPosition = new Vector3(
-                    Random.Range(-levelLayer.Size.x / 2, levelLayer.Size.x / 2),
-                    0,
-                    Random.Range(-levelLayer.Size.y / 2, levelLayer.Size.y / 2)
+                    Random.Range(0, levelLayer.Size.x),
+                    1,
+                    -Random.Range(0, levelLayer.Size.y)
                 );
             }
         }
