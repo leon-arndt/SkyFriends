@@ -8,7 +8,8 @@ namespace WaveFunctionCollapse
         [SerializeField] private OverlapWFC levelLayer;
         [SerializeField] private ushort layerCount;
         [SerializeField] private ushort layerHeight;
-        [SerializeReference] private ScriptableObject[] features;
+        
+        private ScriptableObject[] _features;
 
         private void Start()
         {
@@ -19,6 +20,11 @@ namespace WaveFunctionCollapse
         {
             DeleteGenerated();
             Generate();
+        }   
+        
+        public void SetFeatures(ScriptableObject[] features)
+        {
+            _features = features;
         }
 
         private void DeleteGenerated()
@@ -36,7 +42,7 @@ namespace WaveFunctionCollapse
                 var layer = Instantiate(levelLayer, transform);
                 levelLayer.Run();
                 layer.transform.localPosition = new Vector3(0, i * layerHeight, 0);
-                foreach (var feature in features)
+                foreach (var feature in _features)
                 {
                     if (feature is ILevelGeneratorFeature levelGeneratorFeature)
                     {

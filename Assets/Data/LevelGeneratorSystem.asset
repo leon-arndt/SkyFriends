@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fdf04c2485431fb85fffecc814c9cc, type: 3}
   m_Name: LevelGeneratorSystem
   m_EditorClassIdentifier: 
+  features:
+  - {fileID: 11400000, guid: 4cb3771dda1a5d74b9b7649df76c61fb, type: 2}
+  - {fileID: 11400000, guid: 6f5c772cb0f8a1e41a0f367aaaaef312, type: 2}
+  - {fileID: 11400000, guid: 1b3dd8a36203fd046a89c6447ae5a79b, type: 2}
