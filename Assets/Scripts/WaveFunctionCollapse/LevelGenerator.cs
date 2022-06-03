@@ -53,7 +53,7 @@ namespace WaveFunctionCollapse
         }
     }
 
-    internal interface ILevelGeneratorFeature
+    public interface ILevelGeneratorFeature
     {
         public void Handle(IOverlapWfcInfo levelLayer);
     }
