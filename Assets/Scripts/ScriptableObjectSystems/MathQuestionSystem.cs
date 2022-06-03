@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Utility;
 using Random = UnityEngine.Random;
 
 namespace ScriptableObjectSystems
@@ -9,9 +12,14 @@ namespace ScriptableObjectSystems
         [SerializeField] private SkillSystem skillSystem;
         [SerializeField] private MathQuestion currentQuestion;
         [SerializeField] private MathQuestion[] possibleQuestions;
+        [SerializeField] private uint avoidDuplicatesLength;
 
+        private SizedQueue<MathQuestion> _recentQuestions;
+        
         private void OnEnable()
         {
+            var safeMaxDuplicates = avoidDuplicatesLength <= (uint) possibleQuestions.Length ? avoidDuplicatesLength : (uint) possibleQuestions.Length;
+            _recentQuestions = new SizedQueue<MathQuestion>(safeMaxDuplicates);
             GetNewQuestion();
         }
 
@@ -40,8 +48,15 @@ namespace ScriptableObjectSystems
                 Debug.LogError("No questions in the list");
                 return;
             }
-            var randomIndex = Random.Range(0, possibleQuestions.Length);
-            currentQuestion = possibleQuestions[randomIndex];
+
+            var newQuestions = new HashSet<MathQuestion>(possibleQuestions);
+            foreach (var recentQuestion in _recentQuestions)
+            {
+                newQuestions.Remove(recentQuestion);
+            }
+            var randomIndex = Random.Range(0, newQuestions.Count);
+            currentQuestion = newQuestions.ToArray()[randomIndex];
+            _recentQuestions.Enqueue(currentQuestion);
         }
 
         public string GetQuestion()
