@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf2246aa4a0433fbf04e68edb8b9d0d, type: 3}
+  m_Name: PortalExit
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6717380741781356761, guid: d4eff840424bc4f4484cfec033e97b97, type: 3}
