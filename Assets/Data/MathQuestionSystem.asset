@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: MathQuestionSystem
   m_EditorClassIdentifier: 
   skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
-  currentQuestion: {fileID: 0}
+  currentQuestion: {fileID: 11400000, guid: 259ef7fbfc7d5464ca6c2337d9322420, type: 2}
   possibleQuestions:
   - {fileID: 11400000, guid: 259ef7fbfc7d5464ca6c2337d9322420, type: 2}
   - {fileID: 11400000, guid: f6067360e9bdfda47ac0ea88bdebc810, type: 2}
   - {fileID: 11400000, guid: 528622802e301fd43801631a1671c024, type: 2}
   - {fileID: 11400000, guid: 7cf081751cd713a4692fe2864c2eaa86, type: 2}
+  - {fileID: 11400000, guid: d643da548537ce141b9e0d810fe59ebd, type: 2}
+  - {fileID: 11400000, guid: 4f00dbceae207cd45bd8ab8fd2fd9e9a, type: 2}

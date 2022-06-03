@@ -26,6 +26,7 @@ namespace UserInterface.Overlay
                 var answer = mathQuestionSystem.GetPossibleAnswer();
                 if (index >= 0 && index < answer.Length)
                 {
+                    questionView.DisableToggle();
                     questionView.SetText(answer[index].answer);
                 }
             }
@@ -42,6 +43,7 @@ namespace UserInterface.Overlay
             {
                 answers.Add(questionView.State);
             }
+
             mathQuestionSystem.Answer(answers.ToArray());
             ShowCurrentQuestion();
         }
