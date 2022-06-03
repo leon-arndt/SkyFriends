@@ -1,3 +1,4 @@
+using ScriptableObjectSystems;
 using UnityEngine;
 
 namespace WorldEntity
@@ -6,7 +7,9 @@ namespace WorldEntity
     {
         [SerializeField] private ScriptableVector3 playerPosition;
         [SerializeField] private ScriptableVector3 playerInitPosition;
+        [SerializeField] private LifeTimeSystem lifeTimeSystem;
         [SerializeField] private sbyte killFloorHeight = -10;
+
         private void Start()
         {
             playerInitPosition.value = transform.position;
@@ -16,12 +19,19 @@ namespace WorldEntity
         {
             if (transform.position.y < killFloorHeight)
             {
-                var controller = GetComponent<CharacterController>();
-                controller.enabled = false;
-                transform.position = playerInitPosition.value;
-                controller.enabled = true;
-                playerPosition.value = playerInitPosition.value;
+                Reset();
             }
+        }
+
+        private void Reset()
+        {
+            var controller = GetComponent<CharacterController>();
+            controller.enabled = false;
+            transform.position = playerInitPosition.value;
+            controller.enabled = true;
+            playerPosition.value = playerInitPosition.value;
+
+            lifeTimeSystem.Reset();
         }
     }
 }

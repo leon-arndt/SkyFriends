@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScriptableObjectSystems;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace WorldEntity
@@ -9,6 +10,7 @@ namespace WorldEntity
 
         [SerializeField] private StatSystem statSystem;
         [SerializeField] private SkillSystem skillSystem;
+        [SerializeField] private LifeTimeSystem lifeTimeSystem;
         [SerializeField] private Faction faction;
 
         private void OnEnable()
@@ -34,9 +36,21 @@ namespace WorldEntity
 
             if (statSystem.Get(StatType.Health).amount <= 0)
             {
-                if (faction.isBefriendable && Random.value < faction.befriendChance)
+                Kill(source);
+            }
+        }
+
+        private void Kill(Faction source)
+        {
+            if (faction.isBefriendable && Random.value < faction.befriendChance)
+            {
+                Befriend(source);
+            }
+            else
+            {
+                if (lifeTimeSystem != null)
                 {
-                    Befriend(source);
+                    lifeTimeSystem.Reset();
                 }
                 else
                 {

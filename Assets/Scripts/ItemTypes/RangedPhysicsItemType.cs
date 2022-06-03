@@ -1,3 +1,4 @@
+using ScriptableObjectSystems;
 using UnityEngine;
 
 namespace ItemTypes
