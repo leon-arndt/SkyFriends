@@ -40,7 +40,7 @@ namespace WaveFunctionCollapse
                 {
                     if (feature is ILevelGeneratorFeature levelGeneratorFeature)
                     {
-                        levelGeneratorFeature.Handle(levelLayer);
+                        levelGeneratorFeature.Handle(layer);
                     }
                 }
             }
