@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b7147570bb344ab90977ce111d6e303, type: 3}
-  m_Name: Set
+  m_Name: SetDefinition
   m_EditorClassIdentifier: 
   question: Which of these is a set?
   answers:
