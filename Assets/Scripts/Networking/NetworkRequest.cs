@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text;
 using Networking.Requests;
 using Newtonsoft.Json;
+using ScriptableObjectSystems;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -96,6 +97,7 @@ namespace Networking
 		private string result;
 		public Action<string> doneCallback;
 
+		// TODO: other verbs, e.g. POST request
 		public IEnumerator GetRequest()
 		{
 			var www = UnityWebRequest.Get(request.BasePath + request.Path);
