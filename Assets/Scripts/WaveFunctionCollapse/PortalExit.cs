@@ -7,7 +7,7 @@ namespace WaveFunctionCollapse
     public class PortalExit : ScriptableObject, ILevelGeneratorFeature
     {
         [SerializeField] private Transform prefab;
-        
+
         public void Handle(IOverlapWfcInfo levelLayer)
         {
             var portals = FindObjectsOfType<Portal>();
@@ -21,7 +21,7 @@ namespace WaveFunctionCollapse
                     1,
                     -Random.Range(0, levelLayer.Size.y)
                 );
-                    
+
                 portal.target = uniquePrefab;
                 return;
             }

@@ -31,7 +31,7 @@ namespace UserInterface.Overlay
                 }
             }
 
-            questionText.text = mathQuestionSystem.GetQuestion();
+            questionText.text = mathQuestionSystem.GetCurrentQuestion();
             confirmButton.onClick.RemoveAllListeners();
             confirmButton.onClick.AddListener(SubmitAnswer);
         }
@@ -44,7 +44,7 @@ namespace UserInterface.Overlay
                 answers.Add(questionView.State);
             }
 
-            mathQuestionSystem.Answer(answers.ToArray());
+            mathQuestionSystem.SubmitAnswer(answers.ToArray());
             ShowCurrentQuestion();
         }
     }
