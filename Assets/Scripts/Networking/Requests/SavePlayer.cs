@@ -2,7 +2,7 @@ using Networking.Model;
 
 namespace Networking.Requests
 {
-    public struct SavePlayer : INetworkRequest
+    public struct SavePlayer : INetworkRequestType
     {
         public SavePlayer(Player player)
         {

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Text;
 using Networking.Requests;
 using Newtonsoft.Json;
-using ScriptableObjectSystems;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -14,19 +13,19 @@ namespace Networking
 		public const string GameServerBaseUrl = "http://localhost:8080/";
 		public const string MathQuestionsBaseUrl = "https://math-questions-backend.herokuapp.com/";
 
-		public static void HandleNetworkRequest(INetworkRequest request)
+		public static void HandleNetworkRequest(INetworkRequestType requestType)
 		{
-			switch (request.Method)
+			switch (requestType.Method)
 			{
 				case Method.Post:
 					FindObjectOfType<NetworkRequest>().StartCoroutine(
-						PostRequestJson(request.BasePath + request.Path,
-							JsonConvert.SerializeObject(request.RequestBody))
+						PostRequestJson(requestType.BasePath + requestType.Path,
+							JsonConvert.SerializeObject(requestType.RequestBody))
 					);
 					break;
 				case Method.Get:
 					FindObjectOfType<NetworkRequest>().StartCoroutine(
-						GetRequest(request.BasePath + request.Path)
+						GetRequest(requestType.BasePath + requestType.Path)
 					);
 					break;
 			}
@@ -89,28 +88,45 @@ namespace Networking
 		{
 			FindObjectOfType<NetworkRequest>().StartCoroutine(networkObject.GetRequest());
 		}
+
+		public static void Create(INetworkRequestType requestType, Action<NetworkResponse> doneCallback)
+		{
+			Create(new NetworkObject{requestType = requestType, doneCallback = doneCallback});
+		}
 	}
 
 	public class NetworkObject
 	{
-		public INetworkRequest request;
+		public INetworkRequestType requestType;
 		private string result;
-		public Action<string> doneCallback;
+		public Action<NetworkResponse> doneCallback;
 
 		// TODO: other verbs, e.g. POST request
 		public IEnumerator GetRequest()
 		{
-			var www = UnityWebRequest.Get(request.BasePath + request.Path);
+			var www = UnityWebRequest.Get(requestType.BasePath + requestType.Path);
 			yield return www.SendWebRequest();
 			if (www.isNetworkError || www.isHttpError)
 			{
-				Debug.Log(www.error);
+				doneCallback(new NetworkResponse{message = www.error, status = ResponseStatus.Error});
 			}
 			else
 			{
 				result = www.downloadHandler.text;
-				doneCallback(result);
+				doneCallback(new NetworkResponse{message = result, status = ResponseStatus.Success});
 			}
 		}
+	}
+
+	public struct NetworkResponse
+	{
+		public ResponseStatus status;
+		public string message;
+	}
+
+	public enum ResponseStatus
+	{
+		Success,
+		Error
 	}
 }

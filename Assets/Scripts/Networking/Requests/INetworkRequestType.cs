@@ -1,6 +1,6 @@
 namespace Networking.Requests
 {
-    public interface INetworkRequest
+    public interface INetworkRequestType
     {
         public string BasePath { get; set; }
         public string Path { get; set; }

@@ -1,6 +1,6 @@
 namespace Networking.Requests
 {
-    public struct GetMathQuestions : INetworkRequest
+    public struct GetMathQuestions : INetworkRequestType
     {
         public string BasePath
         {
