@@ -12,7 +12,8 @@ namespace GameInput
         private Camera _camera;
         private const float PlayerSpeed = 8.0f;
         private const float JumpHeight = 2.0f;
-        private const float GravityValue = -28f;
+        public const float GravityValue = -28f;
+        private float _horizontalInput, _verticalInput;
 
         private void Start()
         {
@@ -25,15 +26,19 @@ namespace GameInput
             GameInput.Set(InputType.Horizontal, Input.GetAxis("Horizontal"));
             GameInput.Set(InputType.Vertical, Input.GetAxis("Vertical"));
 
-            var horizontalInput = GameInput.Get(InputType.Horizontal);
-            var verticalInput = GameInput.Get(InputType.Vertical);
+            _horizontalInput = GameInput.Get(InputType.Horizontal);
+            _verticalInput = GameInput.Get(InputType.Vertical);
 
             if (Input.GetButtonDown("Jump") && _groundedPlayer)
             {
                 Jump();
             }
 
-            Move(horizontalInput, verticalInput);
+        }
+
+        private void FixedUpdate()
+        {
+	        Move(_horizontalInput, _verticalInput);
         }
 
         public void Jump()
