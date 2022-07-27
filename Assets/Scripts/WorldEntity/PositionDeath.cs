@@ -1,4 +1,6 @@
+using Events;
 using ScriptableObjectSystems;
+using UniRx;
 using UnityEngine;
 
 namespace WorldEntity
@@ -25,6 +27,7 @@ namespace WorldEntity
 
         private void Reset()
         {
+	        MessageBroker.Default.Publish(new ShowUi{type = UiType.GameOverScreen});
             var controller = GetComponent<CharacterController>();
             controller.enabled = false;
             transform.position = playerInitPosition.value;
