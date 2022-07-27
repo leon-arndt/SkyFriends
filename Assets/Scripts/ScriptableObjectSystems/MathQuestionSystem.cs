@@ -46,7 +46,7 @@ namespace ScriptableObjectSystems
 			Debug.Log($"Apply Questions: {networkResponse.message}");
 			onlineQuestions = new List<MathQuestion>();
 			var questionsResponse = new QuestionsResponse();
-			// JsonConvert.PopulateObject(response, questionsResponse);
+			JsonConvert.PopulateObject(networkResponse.message, questionsResponse);
 			Debug.Log($"Deserialized Questions Count: {questionsResponse.questions.Count}");
 		}
 
