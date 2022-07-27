@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Utility;
 
-namespace UserInterface
+namespace UserInterface.Overlay
 {
     public class SkillView : MonoBehaviour
     {
@@ -10,6 +11,7 @@ namespace UserInterface
 
         public void Display(KeyValuePair<SkillType, SkillData> skill)
         {
+	        transform.Shake();
             level.text = skill.Value.level.ToString();
         }
     }

@@ -2,7 +2,7 @@
 using UniRx;
 using UnityEngine;
 
-namespace UserInterface
+namespace UserInterface.Overlay
 {
     public class SkillsView : MonoBehaviour
     {
