@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Utility
+namespace GenericComponents
 {
 	public class Rotator : MonoBehaviour
 	{
