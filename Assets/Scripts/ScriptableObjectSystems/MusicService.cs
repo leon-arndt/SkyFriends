@@ -9,6 +9,7 @@ namespace ScriptableObjectSystems
 	public class MusicService : ScriptableObject
 	{
 		[SerializeField] private List<TrackConfig> trackConfigs;
+		[SerializeField] private float fadeSeconds = 3f;
 
 		private readonly List<RuntimeTrack> runtimeTracks = new();
 
@@ -19,8 +20,6 @@ namespace ScriptableObjectSystems
 				Debug.LogWarning($"Music track of type {type} not found in configs");
 				return;
 			}
-
-			var fadeSeconds = 2f;
 
 			foreach (var track in runtimeTracks)
 			{
@@ -39,6 +38,7 @@ namespace ScriptableObjectSystems
 				var audioSource = audioHolder.AddComponent<AudioSource>();
 				audioSource.clip = trackConfigs.First(x => x.trackType == type).clip;
 				audioSource.loop = true;
+				audioSource.volume = 0f;
 				audioSource.Play();
 				runtimeTracks.Add(new RuntimeTrack { trackType = type, source = audioSource});
 			}
