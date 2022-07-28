@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 namespace ScriptableObjectSystems
@@ -19,9 +20,17 @@ namespace ScriptableObjectSystems
 				return;
 			}
 
+			var fadeSeconds = 2f;
+
 			foreach (var track in runtimeTracks)
 			{
-				track.source.volume = 0f;
+				var outFadeVolume = track.source.volume;
+				DOVirtual.Float(
+					outFadeVolume,
+					0f,
+					fadeSeconds,
+					(v) => track.source.volume = v
+				);
 			}
 
 			if (!runtimeTracks.Exists(x => x.trackType == type))
@@ -34,7 +43,16 @@ namespace ScriptableObjectSystems
 				runtimeTracks.Add(new RuntimeTrack { trackType = type, source = audioSource});
 			}
 
-			runtimeTracks.FirstOrDefault(x => x.trackType == type).source.volume = 1f;
+
+			var targetTrack = runtimeTracks.FirstOrDefault(x => x.trackType == type);
+
+			var currentVolume = targetTrack.source.volume;
+			DOVirtual.Float(
+				currentVolume,
+				1f,
+				fadeSeconds,
+				(v) => targetTrack.source.volume = v
+			);
 		}
 
 		public enum TrackType
