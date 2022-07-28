@@ -7,7 +7,7 @@ namespace WorldEntity
     public class Pickup : MonoBehaviour, IInteractible
     {
         [SerializeField] private ScriptableObject itemType;
-        
+
         public void Interact(Transform caller)
         {
             switch (itemType)
@@ -16,7 +16,7 @@ namespace WorldEntity
                     if (caller.GetComponent<IHotbarSystem>() != null)
                     {
                         caller.GetComponent<IHotbarSystem>().HotbarSystem.Add(hotbarItemType);
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                     }
                     break;
                 default:
