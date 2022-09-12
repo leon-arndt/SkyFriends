@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ItemTypes
 {
-    [CreateAssetMenu(menuName = "RangedPhysicsItemType")]
+    [CreateAssetMenu(menuName = "ScriptableObjects/RangedPhysicsItemType")]
     public class RangedPhysicsItemType : ScriptableObject, IHotbarItemType
     {
         [SerializeField] private uint maxInteractDistance = 20;
@@ -29,7 +29,7 @@ namespace ItemTypes
             rigid.AddTorque(Random.onUnitSphere * 100_000)
             ;
         }
-    
+
         public void UseAlternative()
         {
         }

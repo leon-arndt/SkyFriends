@@ -3,7 +3,7 @@ using ScriptableObjectSystems;
 using UnityEngine;
 using WorldEntity;
 
-[CreateAssetMenu(menuName = "RangedItemType")]
+[CreateAssetMenu(menuName = "ScriptableObjects/RangedItemType")]
 public class RangedItemType : ScriptableObject, IHotbarItemType
 {
     [SerializeField] private uint maxInteractDistance = 20;
@@ -13,7 +13,7 @@ public class RangedItemType : ScriptableObject, IHotbarItemType
     [SerializeField] private Faction faction;
     [SerializeField] private Sprite sprite;
     private Camera _camera;
-    
+
     private void OnEnable()
     {
         _camera = Camera.main;
@@ -40,7 +40,7 @@ public class RangedItemType : ScriptableObject, IHotbarItemType
     public void UseAlternative()
     {
         if (statSystem.Get(StatType.UltimateCharge).amount < statSystem.Get(StatType.MaxUltimateCharge).amount) return;
-        
+
         statSystem.Set(StatType.UltimateCharge, new StatData{amount = 0});
 
         RaycastHit[] hits;

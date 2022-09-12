@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using WorldEntity;
 
-[CreateAssetMenu(menuName = "BuildItemType")]
+[CreateAssetMenu(menuName = "ScriptableObjects/BuildItemType")]
 public class BuildItemType : ScriptableObject, IHotbarItemType
 {
     [SerializeField] private uint maxInteractDistance = 20;
