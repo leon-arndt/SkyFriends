@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1737000127866085711}
   - {fileID: 1737000127506029102}
@@ -105,6 +106,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1737000127117592281}
   m_RootOrder: 1
@@ -154,6 +156,8 @@ MonoBehaviour:
   skillViewPrefab: {fileID: 6384897479923330145, guid: 80aeb3210078f6b48b82bf0509b90825,
     type: 3}
   skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
+  skillTypeConfigList: {fileID: 11400000, guid: 5118ecd2006bb51439b335188e5dcd02,
+    type: 2}
 --- !u!1 &1737000127866085712
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +186,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1737000127117592281}
   m_RootOrder: 0

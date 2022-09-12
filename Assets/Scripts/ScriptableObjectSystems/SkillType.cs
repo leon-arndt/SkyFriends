@@ -1,11 +1,14 @@
-﻿public enum SkillType
+﻿namespace ScriptableObjectSystems
 {
-    Taming,
-    Construction,
-    Destruction,
-    Magic,
-    Ranged,
-    Defense,
-    Patience,
-    Math,
+	public enum SkillType
+	{
+		Taming,
+		Construction,
+		Destruction,
+		Magic,
+		Ranged,
+		Defense,
+		Patience,
+		Math,
+	}
 }

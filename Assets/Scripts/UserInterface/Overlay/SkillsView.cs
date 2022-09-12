@@ -1,4 +1,6 @@
-﻿using Events;
+﻿using System.Linq;
+using Events;
+using ScriptableObjectSystems;
 using UniRx;
 using UnityEngine;
 
@@ -9,6 +11,7 @@ namespace UserInterface.Overlay
         [SerializeField] private RectTransform holder;
         [SerializeField] private SkillView skillViewPrefab;
         [SerializeField] private SkillSystem skillSystem;
+        [SerializeField] private SkillTypeConfigList skillTypeConfigList;
 
         private void Start()
         {
@@ -29,7 +32,8 @@ namespace UserInterface.Overlay
             foreach (var skill in skillSystem.GetAll())
             {
                 var skillView = Instantiate(skillViewPrefab, holder);
-                skillView.Display(skill);
+                var icon = skillTypeConfigList.skills.FirstOrDefault(x => x.type == skill.Key).icon;
+                skillView.Display(skill, icon);
             }
         }
     }

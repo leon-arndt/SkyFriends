@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScriptableObjectSystems;
+using UnityEngine;
 using WorldEntity;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/BuildItemType")]
