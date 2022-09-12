@@ -32,7 +32,7 @@ namespace WorldEntity
                 return;
 
             statSystem.Subtract(StatType.Health, amount);
-            skillSystem.Gain(SkillType.Construction, amount);
+            skillSystem.Gain(SkillType.Defense, amount);
 
             if (statSystem.Get(StatType.Health).amount <= 0)
             {
