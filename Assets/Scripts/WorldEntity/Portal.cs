@@ -8,7 +8,10 @@ namespace WorldEntity
 
         public void OnTriggerEnter(Collider other)
         {
-            if (target == null) return;
+	        if (target == null)
+	        {
+		        return;
+	        }
             var controller = other.GetComponent<CharacterController>();
             if (controller != null)
             {

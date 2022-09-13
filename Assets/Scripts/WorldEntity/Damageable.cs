@@ -28,8 +28,10 @@ namespace WorldEntity
 
         public void Damage(Faction source, uint amount)
         {
-            if (source.value == faction.value)
-                return;
+	        if (source.value == faction.value)
+	        {
+		        return;
+	        }
 
             statSystem.Subtract(StatType.Health, amount);
             skillSystem.Gain(SkillType.Defense, amount);

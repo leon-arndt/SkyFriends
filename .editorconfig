@@ -21,6 +21,9 @@ max_line_length = 110
 # C# Formatting Rules         #
 ###############################
 csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
 csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
 csharp_space_after_keywords_in_control_flow_statements = true
 csharp_indent_case_contents = true
