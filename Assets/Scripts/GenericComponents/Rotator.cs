@@ -6,7 +6,7 @@ namespace GenericComponents
 	{
 		[SerializeField] private float speed = 1f;
 
-		private void Update()
+		private void LateUpdate()
 		{
 			transform.Rotate(new Vector3(0, 0, 45) * (Time.deltaTime * speed));
 		}
