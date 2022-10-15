@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aec8b5bf8a014d88bdd0dfa53609029a, type: 3}
-  m_Name: Fish
+  m_Name: FishBig
   m_EditorClassIdentifier: 
   statSystem: {fileID: 11400000, guid: 2bd42e8b1d6196849a5b2ab64e87def3, type: 2}
   hotbarSystem: {fileID: 11400000, guid: fea76aa3c86e75e4ead2dfbf1a0e2190, type: 2}
-  healAmount: 20
-  sprite: {fileID: 21300000, guid: 2e819c245f7a1cc489d527e50422453c, type: 3}
+  healAmount: 40
+  sprite: {fileID: 21300000, guid: bfc04abc7ba1548ccab7585436fa7f9b, type: 3}

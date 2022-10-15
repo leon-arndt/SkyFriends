@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxInteractDistance: 20
   attackPower: 10
-  skillSystem: {fileID: 0}
-  statSystem: {fileID: 0}
+  skillSystem: {fileID: 11400000, guid: 903784a9c1acf334bb679f9668b23a85, type: 2}
+  statSystem: {fileID: 11400000, guid: 2bd42e8b1d6196849a5b2ab64e87def3, type: 2}
   faction: {fileID: 11400000, guid: 405bd56154abd84439c78c2793086251, type: 2}
-  sprite: {fileID: 21300000, guid: 2e819c245f7a1cc489d527e50422453c, type: 3}
+  sprite: {fileID: 21300000, guid: 3c7a706fb4dcc497f949951f23e63b50, type: 3}
