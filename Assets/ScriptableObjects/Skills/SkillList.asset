@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skills:
   - type: 0
-    icon: {fileID: 21300000, guid: 2e819c245f7a1cc489d527e50422453c, type: 3}
+    icon: {fileID: 21300000, guid: 0b01ad7a981e84122bff3ed44b2796f4, type: 3}
   - type: 1
-    icon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 29c793187a339400eaff267b9627dbdb, type: 3}
   - type: 2
-    icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 64a98c05e8c3e4fcd8652259830bd8dd, type: 3}
   - type: 3
-    icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: a46a665b038684a719f7d4a0aec7148d, type: 3}
   - type: 4
-    icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 22f5a3a5b2ea0476fb8fa48b898b8c0c, type: 3}
   - type: 5
-    icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: c0d7617767b4446e39f6eef02ff61a4d, type: 3}
   - type: 6
-    icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 426c14f39d8d346cf87a339865b5069a, type: 3}
   - type: 7
-    icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    icon: {fileID: 21300000, guid: 695a7de28bca84cb68724fe3b078c522, type: 3}
