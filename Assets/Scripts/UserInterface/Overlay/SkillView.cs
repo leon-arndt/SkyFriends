@@ -10,6 +10,7 @@ namespace UserInterface.Overlay
 	public class SkillView : MonoBehaviour
 	{
 		[SerializeField] private TextMeshProUGUI level;
+		[SerializeField] private TextMeshProUGUI skillName;
 		[SerializeField] private Image icon;
 
 		public void Display(KeyValuePair<SkillType, SkillData> skill, Sprite sprite)
@@ -17,6 +18,7 @@ namespace UserInterface.Overlay
 			transform.Shake();
 			icon.sprite = sprite;
 			level.text = skill.Value.level.ToString();
+			skillName.text = skill.Key.ToString();
 		}
 	}
 }
