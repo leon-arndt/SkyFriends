@@ -1,10 +1,14 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Utility
 {
 	public class Walk : MonoBehaviour
 	{
+		[SerializeField] NavMeshAgent agent;
 		[SerializeField] private float moveHeight = 0.1f;
 		[SerializeField] private float rotateAmount = 15f;
 
@@ -24,6 +28,18 @@ namespace Utility
 				.SetLoops(-1, LoopType.Yoyo)
 				.SetDelay(Random.value)
 				.SetEase(Ease.InOutSine);
+		}
+
+		private void Update()
+		{
+			if (agent.velocity.magnitude < 0.1f)
+			{
+				bounceTween.Pause();
+			}
+			else
+			{
+				bounceTween.Play();
+			}
 		}
 	}
 }

@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ab4c2d9413455c93d6366e7675e95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2350313788893901526}
   moveHeight: 0.1
   rotateAmount: 15
 --- !u!1001 &1728425348964210474
