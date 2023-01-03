@@ -10,6 +10,16 @@ namespace UserInterface.Overlay
         [SerializeField] private ScriptableVector3 playerPosition;
         [SerializeField] private TextMeshProUGUI playerPositionText;
 
+        private enum AtmosphereLayer
+        {
+	        Troposphere,
+	        Stratosphere,
+	        Mesosphere,
+	        Thermosphere,
+	        Exosphere,
+	        Unknown
+        }
+
         private void Start()
         {
             Refresh();
@@ -21,7 +31,8 @@ namespace UserInterface.Overlay
         private void Refresh()
         {
             var roundedAltitude = Mathf.Round(playerPosition.value.y);
-            playerPositionText.text = $"Altitude: {roundedAltitude}";
+            var currentAtmosphereLayer = (AtmosphereLayer)(roundedAltitude / 10);
+            playerPositionText.text = $"Altitude: {roundedAltitude} ({currentAtmosphereLayer.ToString()})";
         }
     }
 }

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcd15623-f2bf-4eeb-9333-affd96d72c57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyFriends/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/SkillView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SkillView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Overlay/SkillView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Overlay/SkillView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SkyFriends/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SkyFriends/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Overlay/StatusView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserInterface/Overlay/StatusView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672776640577</updated>
-      <workItem from="1672776645986" duration="31000" />
+      <workItem from="1672776645986" duration="411000" />
     </task>
     <servers />
   </component>
